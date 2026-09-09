@@ -1,0 +1,106 @@
+# ==============================
+# Python
+# ==============================
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+
+# ==============================
+# Dataset / generated data
+# ==============================
+
+# Original fraud dataset
+backend/data/*.csv
+
+# Other large data files we may generate later
+backend/data/*.parquet
+backend/data/*.pkl
+
+
+# ==============================
+# Databases
+# ==============================
+
+# Local SQLite databases
+*.db
+*.sqlite
+*.sqlite3
+
+
+# ==============================
+# Machine Learning
+# ==============================
+
+# Trained PyTorch models/checkpoints
+*.pt
+*.pth
+*.ckpt
+
+# Generated model artifacts
+backend/models/
+
+
+# ==============================
+# Environment / secrets
+# ==============================
+
+.env
+.env.*
+!.env.example
+
+# AWS credentials should NEVER be committed
+.aws/
+
+
+# ==============================
+# IDE / Editor
+# ==============================
+
+.vscode/
+.idea/
+
+# Visual Studio
+.vs/
+
+
+# ==============================
+# Operating System
+# ==============================
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+
+# ==============================
+# Logs
+# ==============================
+
+*.log
+logs/
+
+
+# ==============================
+# Frontend (for later)
+# ==============================
+
+node_modules/
+frontend/dist/
+frontend/.vite/
