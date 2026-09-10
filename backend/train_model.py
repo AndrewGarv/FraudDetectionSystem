@@ -2,6 +2,7 @@ import os
 
 import pandas as pd
 import torch
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from torch import nn
@@ -10,6 +11,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 CSV_PATH = "data/creditcard.csv"
 MODEL_PATH = "models/fraud_model.pt"
+SCALER_PATH = "models/scaler.pkl"
 
 BATCH_SIZE = 512
 EPOCHS = 10
@@ -35,6 +37,7 @@ class FraudClassifier(nn.Module):
 
 
 def main():
+    torch.manual_seed(42)
     print("Loading dataset...")
     df = pd.read_csv(CSV_PATH)
 
@@ -83,6 +86,16 @@ def main():
     X_test[["Time", "Amount"]] = scaler.transform(
         X_test[["Time", "Amount"]]
     )
+
+    # Save the fitted scaler for future inference
+    os.makedirs("models", exist_ok=True)
+    joblib.dump(
+        scaler,
+        SCALER_PATH
+    )
+
+    print(f"Scaler saved to {SCALER_PATH}")
+
 
     # -----------------------------
     # Convert to PyTorch tensors

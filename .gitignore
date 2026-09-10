@@ -49,6 +49,7 @@ backend/data/*.pkl
 *.pt
 *.pth
 *.ckpt
+*.pk1
 
 # Generated model artifacts
 backend/models/

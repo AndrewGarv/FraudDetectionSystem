@@ -129,72 +129,12 @@ def main():
         .flatten()
     )
  
-    # ---------------------------------
-    # Compare different thresholds
-    # ---------------------------------
-    thresholds = [
-        0.10,
-        0.20,
-        0.30,
-        0.40,
-        0.50,
-        0.60,
-        0.70,
-        0.80,
-        0.90,
-        0.95,
-        0.99
-    ]
- 
-    print("\nTHRESHOLD COMPARISON")
-    print("------------------------------------------------------------")
-    print(
-        f"{'Threshold':<12}"
-        f"{'Precision':<12}"
-        f"{'Recall':<12}"
-        f"{'F1':<12}"
-        f"{'Flagged':<12}"
-    )
-    print("------------------------------------------------------------")
- 
-    for threshold in thresholds:
- 
-        threshold_predictions = (
-            probabilities >= threshold
-        ).astype(int)
- 
-        precision = precision_score(
-            y_test,
-            threshold_predictions,
-            zero_division=0
-        )
- 
-        recall = recall_score(
-            y_test,
-            threshold_predictions,
-            zero_division=0
-        )
- 
-        f1 = f1_score(
-            y_test,
-            threshold_predictions,
-            zero_division=0
-        )
- 
-        flagged = threshold_predictions.sum()
- 
-        print(
-            f"{threshold:<12.2f}"
-            f"{precision:<12.4f}"
-            f"{recall:<12.4f}"
-            f"{f1:<12.4f}"
-            f"{flagged:<12}"
-        )
  
     # ---------------------------------
-    # Use 0.50 for the main evaluation
+    # Final classification threshold
+    # Selected using validation data
     # ---------------------------------
-    threshold = 0.50
+    threshold = 0.997
  
     predictions = (
         probabilities >= threshold
