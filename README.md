@@ -61,7 +61,7 @@ For this dataset:
   
 These 2 combined make up the F1 score, what you want is a system with a particularly high score as to avoid too many false positives or misses.
 
-## 14. Deployment
+##  Deployment
 
 The next planned stage is cloud deployment.
 
