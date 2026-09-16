@@ -83,7 +83,7 @@ The easiest way to run the complete application is with:
 
 Docker Desktop includes the Docker tooling needed for the containerized version of the application.
 
-> **Note:** The dataset and trained model artifacts may not be included directly in the Git repository because of their size. See the dataset/model setup sections below if they are absent from your clone.
+> **Note:** The dataset and trained model artifacts are WAY too big to put on Git. See the dataset/model setup sections below for more info.
 
 ---
 
