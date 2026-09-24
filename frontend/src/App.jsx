@@ -12,7 +12,7 @@ import {
 
 const API_URL =
   import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
-
+/* The below is a fraud example. Remember that all rows correspond to one transaction*/
 const fraudExample = {
   Time: 406.0,
   V1: -2.3122265423263,
@@ -225,8 +225,8 @@ function App() {
         <h2>Analyze Transaction</h2>
 
         <p className="feature-note">
-  V1–V28 are anonymized PCA-transformed features from the credit card
-  transaction dataset. Time and Amount are the original transaction features.
+  V1–V28 are anonymized from the credit card
+  transaction dataset. Time and Amount are the originals.
 </p>
 
         <p>
